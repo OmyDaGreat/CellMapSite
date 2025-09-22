@@ -4,6 +4,6 @@ enum class Pages(
     val value: String,
     val route: String,
 ) {
-    INDEX("Index", "/"),
+    INDEX("Cell Explorer", "/"),
     ABOUT("About", "/about"),
 }
