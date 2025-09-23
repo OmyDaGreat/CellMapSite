@@ -48,6 +48,7 @@ import org.jetbrains.compose.web.css.marginLeft
 import org.jetbrains.compose.web.css.marginRight
 import org.jetbrains.compose.web.css.marginTop
 import org.jetbrains.compose.web.css.opacity
+import org.jetbrains.compose.web.css.overflow
 import org.jetbrains.compose.web.css.padding
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.position
@@ -84,7 +85,16 @@ fun HomePage() {
                     .backgroundColor(Color("#FAFAFA"))
                     .borderRight(1.px, LineStyle.Solid, Color("#E0E0E0")),
             ) {
-                Column {
+                Div(
+                    attrs = {
+                        style {
+                            width(100.percent)
+                            height(100.percent)
+                            overflow("auto")
+                        }
+                    }
+                ) {
+                    Column {
                     H1(
                         attrs = {
                             style {
@@ -209,6 +219,7 @@ fun HomePage() {
                         }
                     }
                 }
+            }
             }
 
             // Right panel - Cell map
