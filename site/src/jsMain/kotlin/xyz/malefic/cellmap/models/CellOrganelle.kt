@@ -39,7 +39,7 @@ object CellOrganelleData {
                 function = "Controls cell activities and contains DNA",
                 imageUrl = "https://media.discordapp.net/attachments/1039369834149990471/1419900264583794688/image.png?ex=68d370ab&is=68d21f2b&hm=40f8444e6636b1625e09e4e8d370090ec85c95c18abf5cac6c31ddef78100fb6&=&format=webp&quality=lossless",
                 mapPosition = Position(40.0, 35.0),
-                size = Size(100.0, 100.0),
+                size = Size(150.0, 150.0),
                 color = "#8B4513",
             ),
             CellOrganelle(
@@ -59,7 +59,7 @@ object CellOrganelleData {
                 function = "Produces energy (ATP) for the cell",
                 imageUrl = "https://media.discordapp.net/attachments/1039369834149990471/1419889405480403004/screenshot-2025-09-22_20-31-24.png?ex=68d3668e&is=68d2150e&hm=b556f6aa9ae5cfef3a41a166fd4b247790c643baa27d7421fc4d5a7fc4a78cca&=&format=webp&quality=lossless",
                 mapPosition = Position(10.0, 62.0),
-                size = Size(75.0, 50.0),
+                size = Size(120.0, 75.0),
                 color = "#FF6B6B",
             ),
             CellOrganelle(
@@ -87,8 +87,8 @@ object CellOrganelleData {
                         "Anyone who loves sunny days and snacks!\n",
                 function = "Photosynthesis and energy production",
                 imageUrl = "https://media.discordapp.net/attachments/1039369834149990471/1419895884350488616/image.png?ex=68d36c97&is=68d21b17&hm=06ae93ae22b269112d9d63c9c46dba71fa7885f6b6f5b66320139b5e50f1b9f2&=&format=webp&quality=lossless",
-                mapPosition = Position(70.0, 70.0),
-                size = Size(65.0, 65.0),
+                mapPosition = Position(65.0, 65.0),
+                size = Size(100.0, 100.0),
                 color = "#32CD32",
             ),
             CellOrganelle(
@@ -102,8 +102,8 @@ object CellOrganelleData {
                         "Whatever option you decide, know we have millions of ribosome apartments available for your selection!",
                 function = "Protein synthesis",
                 imageUrl = "https://media.discordapp.net/attachments/1039369834149990471/1419899678702571550/image.png?ex=68d3701f&is=68d21e9f&hm=26f12399c1030be6709c80fa8d0ce95b1c2d0cd8e92a2530ecab6bb0fbe95309&=&format=webp&quality=lossless",
-                mapPosition = Position(62.0, 28.0),
-                size = Size(55.0, 55.0),
+                mapPosition = Position(62.0, 15.0),
+                size = Size(95.0, 95.0),
                 color = "#4ECDC4",
             ),
             CellOrganelle(
@@ -115,8 +115,8 @@ object CellOrganelleData {
                         "This property comes in two parts (a double deal!). First, the rough ER. It has a stylish look through the decorative ribosomes that are attached to it. These allow for the compartmentalization of protein synthesis—mRNA that exits the nucleus is translated by ribosomes. Next, the smooth ER. While it has a more simplistic look with no ribosomes, it synthesizes lipids like phospholipids, cholesterol, and steroids. This includes fats used for insulation, meaning this home comes with its own heating! Also, the smooth ER has enzymes that detoxify the cell. Who wouldn’t want a self-cleaning house?",
                 function = "Protein and lipid synthesis, transport",
                 imageUrl = "https://media.discordapp.net/attachments/1039369834149990471/1419897828494413884/image.png?ex=68d36e66&is=68d21ce6&hm=023669bbae352476199f46df2d329ea57148da5f03d2b599fee856da3a225b1a&=&format=webp&quality=lossless",
-                mapPosition = Position(20.0, 15.0),
-                size = Size(85.0, 60.0),
+                mapPosition = Position(33.0, 15.0),
+                size = Size(150.0, 100.0),
                 color = "#45B7D1",
             ),
             CellOrganelle(
@@ -132,8 +132,8 @@ object CellOrganelleData {
                         "Cisternae Court is situated in a wonderful community of couriers, whom you can socialize daily at the estate’s trans face as they pick up materials to send out into the cytosol.",
                 function = "Modifies and packages proteins",
                 imageUrl = "https://media.discordapp.net/attachments/1039369834149990471/1419900416640028682/image.png?ex=68d370cf&is=68d21f4f&hm=2a2453b71cdde50efa2dfaa15153b7f669c73e68b51096349cbf8d79dff04c92&=&format=webp&quality=lossless",
-                mapPosition = Position(65.0, 47.0),
-                size = Size(75.0, 55.0),
+                mapPosition = Position(70.0, 40.0),
+                size = Size(140.0, 100.0),
                 color = "#96CEB4",
             ),
             CellOrganelle(
@@ -150,8 +150,8 @@ object CellOrganelleData {
                         "The interior comes fully furnished with gorgeous anthocyanin pigments, adding bright and fun colors to your living space!",
                 function = "Storage, waste disposal, growth",
                 imageUrl = "https://media.discordapp.net/attachments/1039369834149990471/1419900122052956200/image.png?ex=68d37089&is=68d21f09&hm=3488103cd8ddffecd7e05878930e2e07b013cf239d0e92c3f058bd2135aa337b&=&format=webp&quality=lossless",
-                mapPosition = Position(30.0, 67.0),
-                size = Size(70.0, 75.0),
+                mapPosition = Position(40.0, 67.0),
+                size = Size(100.0, 125.0),
                 color = "#FFB6B9",
             ),
             CellOrganelle(
@@ -165,8 +165,8 @@ object CellOrganelleData {
                         "You’ll find that the mosaic model construction is to die for; it isn’t just stunning, it’s crucial to the stability of the plasma membrane. Weak hydrophobic interactions allow the membrane to move and shift, maintaining fluid and structural integrity at different temperatures. This location is embellished by membrane carbohydrates—integral and flashy markers for the cell.",
                 function = "Regulates entry and exit of substances",
                 imageUrl = "https://media.discordapp.net/attachments/1039369834149990471/1419900587138351184/image.png?ex=68d370f8&is=68d21f78&hm=bd72fca4d0a63942624987c19dba816c9c61f14677fad82bc5eb20d802198bf0&=&format=webp&quality=lossless",
-                mapPosition = Position(8.0, 20.0),
-                size = Size(80.0, 50.0),
+                mapPosition = Position(10.0, 40.0),
+                size = Size(160.0, 100.0),
                 color = "#F7D794",
             ),
         )
