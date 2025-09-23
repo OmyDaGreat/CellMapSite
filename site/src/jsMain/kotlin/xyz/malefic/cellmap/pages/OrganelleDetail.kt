@@ -21,8 +21,6 @@ import org.jetbrains.compose.web.css.fontSize
 import org.jetbrains.compose.web.css.fontStyle
 import org.jetbrains.compose.web.css.lineHeight
 import org.jetbrains.compose.web.css.marginBottom
-import org.jetbrains.compose.web.css.marginTop
-import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.css.textAlign
 import org.jetbrains.compose.web.dom.Div
@@ -45,7 +43,7 @@ fun OrganelleDetailPage() {
             .fillMaxSize()
             .backgroundColor(Color("#F8F9FA"))
             .padding(32.px),
-        contentAlignment = Alignment.TopCenter
+        contentAlignment = Alignment.TopCenter,
     ) {
         if (organelle != null) {
             Column(
@@ -54,12 +52,12 @@ fun OrganelleDetailPage() {
                     .fillMaxWidth()
                     .backgroundColor(Colors.White)
                     .borderRadius(12.px)
-                    .padding(40.px)
+                    .padding(40.px),
             ) {
                 // Back link
                 Link(
                     path = "/",
-                    text = "← Back to Cell Explorer"
+                    text = "← Back to Cell Explorer",
                 )
 
                 // Organelle image
@@ -67,7 +65,7 @@ fun OrganelleDetailPage() {
                     Modifier
                         .fillMaxWidth()
                         .padding(bottom = 32.px, top = 24.px),
-                    contentAlignment = Alignment.Center
+                    contentAlignment = Alignment.Center,
                 ) {
                     Img(
                         src = organelle.imageUrl,
@@ -80,7 +78,7 @@ fun OrganelleDetailPage() {
                                 property("border-radius", "12px")
                                 property("box-shadow", "0 4px 12px rgba(0,0,0,0.1)")
                             }
-                        }
+                        },
                     )
                 }
 
@@ -93,7 +91,7 @@ fun OrganelleDetailPage() {
                             textAlign("center")
                             marginBottom(8.px)
                         }
-                    }
+                    },
                 ) {
                     Text(organelle.name)
                 }
@@ -108,7 +106,7 @@ fun OrganelleDetailPage() {
                             marginBottom(32.px)
                             fontStyle("italic")
                         }
-                    }
+                    },
                 ) {
                     Text(organelle.function)
                 }
@@ -123,7 +121,7 @@ fun OrganelleDetailPage() {
                             marginBottom(16.px)
                             property("white-space", "pre-line")
                         }
-                    }
+                    },
                 ) {
                     Text(organelle.description)
                 }
@@ -133,7 +131,7 @@ fun OrganelleDetailPage() {
                     Modifier
                         .fillMaxWidth()
                         .padding(top = 24.px),
-                    contentAlignment = Alignment.Center
+                    contentAlignment = Alignment.Center,
                 ) {
                     P(
                         attrs = {
@@ -142,7 +140,7 @@ fun OrganelleDetailPage() {
                                 color(Color("#7F8C8D"))
                                 textAlign("center")
                             }
-                        }
+                        },
                     ) {
                         Text("Organelle Color: ")
                         Div(
@@ -156,7 +154,7 @@ fun OrganelleDetailPage() {
                                     property("margin-left", "8px")
                                     property("vertical-align", "middle")
                                 }
-                            }
+                            },
                         )
                     }
                 }
@@ -170,7 +168,7 @@ fun OrganelleDetailPage() {
                     .backgroundColor(Colors.White)
                     .borderRadius(12.px)
                     .padding(40.px),
-                horizontalAlignment = Alignment.CenterHorizontally
+                horizontalAlignment = Alignment.CenterHorizontally,
             ) {
                 H1(
                     attrs = {
@@ -180,7 +178,7 @@ fun OrganelleDetailPage() {
                             textAlign("center")
                             marginBottom(16.px)
                         }
-                    }
+                    },
                 ) {
                     Text("Organelle Not Found")
                 }
@@ -193,14 +191,14 @@ fun OrganelleDetailPage() {
                             textAlign("center")
                             marginBottom(24.px)
                         }
-                    }
+                    },
                 ) {
                     Text("The organelle with ID '$organelleId' could not be found.")
                 }
 
                 Link(
                     path = "/",
-                    text = "← Back to Cell Explorer"
+                    text = "← Back to Cell Explorer",
                 )
             }
         }
