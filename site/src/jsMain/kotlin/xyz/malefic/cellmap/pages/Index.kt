@@ -131,27 +131,60 @@ fun HomePage() {
                             Row(
                                 verticalAlignment = Alignment.CenterVertically,
                             ) {
+                                // Organelle image thumbnail
                                 Div(
                                     attrs = {
                                         style {
-                                            width(12.px)
-                                            height(12.px)
-                                            borderRadius(50.percent)
-                                            backgroundColor(Color(organelle.color))
-                                            marginRight(8.px)
-                                        }
-                                    },
-                                )
-                                H2(
-                                    attrs = {
-                                        style {
-                                            fontSize(18.px)
-                                            color(Color("#2C3E50"))
-                                            margin(0.px)
+                                            width(60.px)
+                                            height(60.px)
+                                            borderRadius(8.px)
+                                            marginRight(16.px)
+                                            property("overflow", "hidden")
+                                            backgroundColor(Color("#F5F5F5"))
                                         }
                                     },
                                 ) {
-                                    Text(organelle.name)
+                                    Img(
+                                        src = organelle.imageUrl,
+                                        alt = organelle.name,
+                                        attrs = {
+                                            style {
+                                                width(100.percent)
+                                                height(100.percent)
+                                                property("object-fit", "cover")
+                                                property("object-position", "center")
+                                            }
+                                        },
+                                    )
+                                }
+                                
+                                Column {
+                                    Row(
+                                        verticalAlignment = Alignment.CenterVertically,
+                                    ) {
+                                        Div(
+                                            attrs = {
+                                                style {
+                                                    width(12.px)
+                                                    height(12.px)
+                                                    borderRadius(50.percent)
+                                                    backgroundColor(Color(organelle.color))
+                                                    marginRight(8.px)
+                                                }
+                                            },
+                                        )
+                                        H2(
+                                            attrs = {
+                                                style {
+                                                    fontSize(18.px)
+                                                    color(Color("#2C3E50"))
+                                                    margin(0.px)
+                                                }
+                                            },
+                                        ) {
+                                            Text(organelle.name)
+                                        }
+                                    }
                                 }
                             }
 
