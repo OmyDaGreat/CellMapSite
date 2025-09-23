@@ -11,9 +11,49 @@ import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.graphics.Colors
-import com.varabyte.kobweb.compose.ui.modifiers.*
+import com.varabyte.kobweb.compose.ui.modifiers.alignItems
+import com.varabyte.kobweb.compose.ui.modifiers.backgroundColor
+import com.varabyte.kobweb.compose.ui.modifiers.border
+import com.varabyte.kobweb.compose.ui.modifiers.borderRadius
+import com.varabyte.kobweb.compose.ui.modifiers.borderRight
+import com.varabyte.kobweb.compose.ui.modifiers.display
+import com.varabyte.kobweb.compose.ui.modifiers.fillMaxSize
+import com.varabyte.kobweb.compose.ui.modifiers.height
+import com.varabyte.kobweb.compose.ui.modifiers.justifyContent
+import com.varabyte.kobweb.compose.ui.modifiers.padding
+import com.varabyte.kobweb.compose.ui.modifiers.position
+import com.varabyte.kobweb.compose.ui.modifiers.width
 import com.varabyte.kobweb.core.Page
-import org.jetbrains.compose.web.css.*
+import org.jetbrains.compose.web.css.AlignItems
+import org.jetbrains.compose.web.css.Color
+import org.jetbrains.compose.web.css.DisplayStyle
+import org.jetbrains.compose.web.css.JustifyContent
+import org.jetbrains.compose.web.css.LineStyle
+import org.jetbrains.compose.web.css.Position
+import org.jetbrains.compose.web.css.backgroundColor
+import org.jetbrains.compose.web.css.border
+import org.jetbrains.compose.web.css.borderRadius
+import org.jetbrains.compose.web.css.bottom
+import org.jetbrains.compose.web.css.color
+import org.jetbrains.compose.web.css.cursor
+import org.jetbrains.compose.web.css.display
+import org.jetbrains.compose.web.css.fontSize
+import org.jetbrains.compose.web.css.fontStyle
+import org.jetbrains.compose.web.css.height
+import org.jetbrains.compose.web.css.left
+import org.jetbrains.compose.web.css.margin
+import org.jetbrains.compose.web.css.marginBottom
+import org.jetbrains.compose.web.css.marginLeft
+import org.jetbrains.compose.web.css.marginRight
+import org.jetbrains.compose.web.css.marginTop
+import org.jetbrains.compose.web.css.opacity
+import org.jetbrains.compose.web.css.padding
+import org.jetbrains.compose.web.css.percent
+import org.jetbrains.compose.web.css.position
+import org.jetbrains.compose.web.css.px
+import org.jetbrains.compose.web.css.top
+import org.jetbrains.compose.web.css.vh
+import org.jetbrains.compose.web.css.width
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.H1
 import org.jetbrains.compose.web.dom.H2
@@ -25,11 +65,11 @@ import xyz.malefic.staticsite.models.CellOrganelleData
 @Composable
 fun HomePage() {
     var selectedOrganelleId by remember { mutableStateOf<String?>(null) }
-    
+
     Box(
         Modifier
             .fillMaxSize()
-            .backgroundColor(Colors.White)
+            .backgroundColor(Colors.White),
     ) {
         Row(Modifier.fillMaxSize()) {
             // Left panel - Property listings (Sotheby's style)
@@ -39,7 +79,7 @@ fun HomePage() {
                     .height(100.vh)
                     .padding(24.px)
                     .backgroundColor(Color("#FAFAFA"))
-                    .borderRight(1.px, LineStyle.Solid, Color("#E0E0E0"))
+                    .borderRight(1.px, LineStyle.Solid, Color("#E0E0E0")),
             ) {
                 Column {
                     H1(
@@ -49,11 +89,11 @@ fun HomePage() {
                                 color(Color("#2C3E50"))
                                 marginBottom(8.px)
                             }
-                        }
+                        },
                     ) {
                         Text("Cell Organelles")
                     }
-                    
+
                     P(
                         attrs = {
                             style {
@@ -61,11 +101,11 @@ fun HomePage() {
                                 color(Color("#7F8C8D"))
                                 marginBottom(24.px)
                             }
-                        }
+                        },
                     ) {
                         Text("Explore the fascinating structures within a eukaryotic cell")
                     }
-                    
+
                     // Organelle cards
                     CellOrganelleData.organelles.forEach { organelle ->
                         val isSelected = selectedOrganelleId == organelle.id
@@ -79,16 +119,16 @@ fun HomePage() {
                                     padding(20.px)
                                     marginBottom(16.px)
                                     border(
-                                        1.px, 
-                                        LineStyle.Solid, 
-                                        if (isSelected) Color("#007BFF") else Color("#E8E8E8")
+                                        1.px,
+                                        LineStyle.Solid,
+                                        if (isSelected) Color("#007BFF") else Color("#E8E8E8"),
                                     )
                                     cursor("pointer")
                                 }
-                            }
+                            },
                         ) {
                             Row(
-                                verticalAlignment = Alignment.CenterVertically
+                                verticalAlignment = Alignment.CenterVertically,
                             ) {
                                 Div(
                                     attrs = {
@@ -99,7 +139,7 @@ fun HomePage() {
                                             backgroundColor(Color(organelle.color))
                                             marginRight(8.px)
                                         }
-                                    }
+                                    },
                                 )
                                 H2(
                                     attrs = {
@@ -108,12 +148,12 @@ fun HomePage() {
                                             color(Color("#2C3E50"))
                                             margin(0.px)
                                         }
-                                    }
+                                    },
                                 ) {
                                     Text(organelle.name)
                                 }
                             }
-                            
+
                             P(
                                 attrs = {
                                     style {
@@ -123,11 +163,11 @@ fun HomePage() {
                                         marginBottom(12.px)
                                         marginTop(8.px)
                                     }
-                                }
+                                },
                             ) {
                                 Text(organelle.function)
                             }
-                            
+
                             P(
                                 attrs = {
                                     style {
@@ -135,17 +175,17 @@ fun HomePage() {
                                         color(Color("#555555"))
                                         marginBottom(12.px)
                                     }
-                                }
+                                },
                             ) {
                                 Text(
                                     if (organelle.description.length > 120) {
                                         organelle.description.take(120) + "..."
                                     } else {
                                         organelle.description
-                                    }
+                                    },
                                 )
                             }
-                            
+
                             Div(
                                 attrs = {
                                     style {
@@ -156,7 +196,7 @@ fun HomePage() {
                                         color(Colors.White)
                                         backgroundColor(Color(organelle.color))
                                     }
-                                }
+                                },
                             ) {
                                 Text("Essential Organelle")
                             }
@@ -164,7 +204,7 @@ fun HomePage() {
                     }
                 }
             }
-            
+
             // Right panel - Cell map
             Box(
                 Modifier
@@ -174,7 +214,7 @@ fun HomePage() {
                     .backgroundColor(Color("#F8F9FA"))
                     .display(DisplayStyle.Flex)
                     .alignItems(AlignItems.Center)
-                    .justifyContent(JustifyContent.Center)
+                    .justifyContent(JustifyContent.Center),
             ) {
                 // Cell container
                 Box(
@@ -184,7 +224,7 @@ fun HomePage() {
                         .position(Position.Relative)
                         .backgroundColor(Color("#E8F4FD"))
                         .borderRadius(50.percent)
-                        .border(3.px, LineStyle.Solid, Color("#2C5F2D"))
+                        .border(3.px, LineStyle.Solid, Color("#2C5F2D")),
                 ) {
                     // Cell membrane outline
                     Div(
@@ -199,9 +239,9 @@ fun HomePage() {
                                 borderRadius(50.percent)
                                 opacity(0.3)
                             }
-                        }
+                        },
                     )
-                    
+
                     // Organelle points
                     CellOrganelleData.organelles.forEach { organelle ->
                         val isSelected = selectedOrganelleId == organelle.id
@@ -242,12 +282,12 @@ fun HomePage() {
                                                 marginBottom(8.px)
                                                 property("white-space", "nowrap")
                                             }
-                                        }
+                                        },
                                     ) {
                                         Text(organelle.name)
                                     }
                                 }
-                            }
+                            },
                         )
                     }
                 }
