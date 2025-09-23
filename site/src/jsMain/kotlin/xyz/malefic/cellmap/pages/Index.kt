@@ -24,6 +24,7 @@ import com.varabyte.kobweb.compose.ui.modifiers.padding
 import com.varabyte.kobweb.compose.ui.modifiers.position
 import com.varabyte.kobweb.compose.ui.modifiers.width
 import com.varabyte.kobweb.core.Page
+import com.varabyte.kobweb.core.rememberPageContext
 import org.jetbrains.compose.web.css.AlignItems
 import org.jetbrains.compose.web.css.Color
 import org.jetbrains.compose.web.css.DisplayStyle
@@ -65,6 +66,7 @@ import xyz.malefic.cellmap.models.CellOrganelleData
 @Page
 @Composable
 fun HomePage() {
+    val pageContext = rememberPageContext()
     var selectedOrganelleId by remember { mutableStateOf<String?>(null) }
 
     Box(
@@ -112,7 +114,10 @@ fun HomePage() {
                         val isSelected = selectedOrganelleId == organelle.id
                         Div(
                             attrs = {
-                                onClick { selectedOrganelleId = organelle.id }
+                                onClick { 
+                                    selectedOrganelleId = organelle.id
+                                    pageContext.router.navigateTo("/organelle/${organelle.id}")
+                                }
                                 style {
                                     width(100.percent)
                                     backgroundColor(if (isSelected) Color("#F8F9FA") else Colors.White)
@@ -248,7 +253,10 @@ fun HomePage() {
                         val isSelected = selectedOrganelleId == organelle.id
                         Div(
                             attrs = {
-                                onClick { selectedOrganelleId = organelle.id }
+                                onClick { 
+                                    selectedOrganelleId = organelle.id
+                                    pageContext.router.navigateTo("/organelle/${organelle.id}")
+                                }
                                 style {
                                     position(Position.Absolute)
                                     left(organelle.mapPosition.x.percent)
