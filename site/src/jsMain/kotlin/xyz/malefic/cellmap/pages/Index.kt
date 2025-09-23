@@ -60,12 +60,15 @@ import org.jetbrains.compose.web.dom.H2
 import org.jetbrains.compose.web.dom.Img
 import org.jetbrains.compose.web.dom.P
 import org.jetbrains.compose.web.dom.Text
+import xyz.malefic.cellmap.models.CellOrganelle
 import xyz.malefic.cellmap.models.CellOrganelleData
 
 @Page
 @Composable
 fun HomePage() {
     var selectedOrganelleId by remember { mutableStateOf<String?>(null) }
+    var showDetailModal by remember { mutableStateOf(false) }
+    var modalOrganelle by remember { mutableStateOf<CellOrganelle?>(null) }
 
     Box(
         Modifier
@@ -82,37 +85,64 @@ fun HomePage() {
                     .backgroundColor(Color("#FAFAFA"))
                     .borderRight(1.px, LineStyle.Solid, Color("#E0E0E0")),
             ) {
-                Column {
-                    H1(
+                Column(Modifier.fillMaxSize()) {
+                    // Fixed header section
+                    Div(
                         attrs = {
                             style {
-                                fontSize(28.px)
-                                color(Color("#2C3E50"))
-                                marginBottom(8.px)
+                                backgroundColor(Color("#FAFAFA"))
+                                property("flex-shrink", "0")
                             }
-                        },
+                        }
                     ) {
-                        Text("Cell Organelles")
+                        H1(
+                            attrs = {
+                                style {
+                                    fontSize(28.px)
+                                    color(Color("#2C3E50"))
+                                    marginBottom(8.px)
+                                    marginTop(0.px)
+                                }
+                            },
+                        ) {
+                            Text("Cell Organelles")
+                        }
+
+                        P(
+                            attrs = {
+                                style {
+                                    fontSize(16.px)
+                                    color(Color("#7F8C8D"))
+                                    marginBottom(24.px)
+                                    marginTop(0.px)
+                                }
+                            },
+                        ) {
+                            Text("Explore the fascinating structures within a eukaryotic cell")
+                        }
                     }
 
-                    P(
+                    // Scrollable organelle cards container
+                    Div(
                         attrs = {
                             style {
-                                fontSize(16.px)
-                                color(Color("#7F8C8D"))
-                                marginBottom(24.px)
+                                property("overflow-y", "auto")
+                                property("flex", "1")
+                                property("padding-right", "8px")
                             }
-                        },
+                        }
                     ) {
-                        Text("Explore the fascinating structures within a eukaryotic cell")
-                    }
 
                     // Organelle cards
                     CellOrganelleData.organelles.forEach { organelle ->
                         val isSelected = selectedOrganelleId == organelle.id
                         Div(
                             attrs = {
-                                onClick { selectedOrganelleId = organelle.id }
+                                onClick { 
+                                    selectedOrganelleId = organelle.id
+                                    modalOrganelle = organelle
+                                    showDetailModal = true
+                                }
                                 style {
                                     width(100.percent)
                                     backgroundColor(if (isSelected) Color("#F8F9FA") else Colors.White)
@@ -236,7 +266,9 @@ fun HomePage() {
                             }
                         }
                     }
+                    // Close scrollable container
                 }
+                // Close column
             }
 
             // Right panel - Cell map
@@ -337,6 +369,113 @@ fun HomePage() {
                                 }
                             },
                         )
+                    }
+                }
+            }
+        }
+
+        // Modal for detailed organelle view
+        if (showDetailModal && modalOrganelle != null) {
+            Div(
+                attrs = {
+                    style {
+                        position(Position.Fixed)
+                        top(0.px)
+                        left(0.px)
+                        width(100.percent)
+                        height(100.vh)
+                        backgroundColor(Color("rgba(0,0,0,0.7)"))
+                        display(DisplayStyle.Flex)
+                        property("align-items", "center")
+                        property("justify-content", "center")
+                        property("z-index", "1000")
+                    }
+                }
+            ) {
+                Div(
+                    attrs = {
+                        style {
+                            backgroundColor(Colors.White)
+                            borderRadius(16.px)
+                            padding(32.px)
+                            property("max-width", "600px")
+                            property("max-height", "80vh")
+                            property("overflow-y", "auto")
+                            margin(20.px)
+                            property("position", "relative")
+                        }
+                    }
+                ) {
+                    // Close button
+                    Div(
+                        attrs = {
+                            onClick { 
+                                showDetailModal = false
+                                modalOrganelle = null
+                            }
+                            style {
+                                position(Position.Absolute)
+                                top(16.px)
+                                property("right", "16px")
+                                width(32.px)
+                                height(32.px)
+                                backgroundColor(Color("#f5f5f5"))
+                                borderRadius(50.percent)
+                                display(DisplayStyle.Flex)
+                                property("align-items", "center")
+                                property("justify-content", "center")
+                                cursor("pointer")
+                                fontSize(18.px)
+                                property("font-weight", "bold")
+                                color(Color("#666"))
+                            }
+                        }
+                    ) {
+                        Text("×")
+                    }
+
+                    // Organelle title
+                    H1(
+                        attrs = {
+                            style {
+                                fontSize(24.px)
+                                color(Color("#2C3E50"))
+                                marginBottom(16.px)
+                                marginTop(0.px)
+                            }
+                        },
+                    ) {
+                        Text(modalOrganelle!!.name)
+                    }
+
+                    // Function
+                    P(
+                        attrs = {
+                            style {
+                                fontSize(16.px)
+                                color(Color("#7F8C8D"))
+                                fontStyle("italic")
+                                marginBottom(16.px)
+                                property("font-weight", "bold")
+                            }
+                        },
+                    ) {
+                        Text("Function: ${modalOrganelle!!.function}")
+                    }
+
+                    // Full description
+                    P(
+                        attrs = {
+                            style {
+                                fontSize(14.px)
+                                color(Color("#555555"))
+                                property("line-height", "1.6")
+                                marginBottom(16.px)
+                                property("white-space", "pre-line")
+                            }
+                        },
+                    ) {
+                        Text(modalOrganelle!!.description)
                     }
                 }
             }
