@@ -1,4 +1,4 @@
-package xyz.malefic.staticsite.pages
+package xyz.malefic.cellmap.pages
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -59,7 +59,7 @@ import org.jetbrains.compose.web.dom.H1
 import org.jetbrains.compose.web.dom.H2
 import org.jetbrains.compose.web.dom.P
 import org.jetbrains.compose.web.dom.Text
-import xyz.malefic.staticsite.models.CellOrganelleData
+import xyz.malefic.cellmap.models.CellOrganelleData
 
 @Page
 @Composable

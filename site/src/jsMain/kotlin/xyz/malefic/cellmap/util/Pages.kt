@@ -1,4 +1,4 @@
-package xyz.malefic.staticsite.util
+package xyz.malefic.cellmap.util
 
 enum class Pages(
     val value: String,

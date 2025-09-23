@@ -5,10 +5,10 @@ server:
   files:
     dev:
       contentRoot: "build/processedResources/js/main/public"
-      script: "build/kotlin-webpack/js/developmentExecutable/staticsite.js"
-      api: "build/libs/staticsite.jar"
+      script: "build/kotlin-webpack/js/developmentExecutable/cellmap.js"
+      api: "build/libs/cellmap.jar"
     prod:
-      script: "build/kotlin-webpack/js/productionExecutable/staticsite.js"
+      script: "build/kotlin-webpack/js/productionExecutable/cellmap.js"
       siteRoot: ".kobweb/site"
 
   port: 8080

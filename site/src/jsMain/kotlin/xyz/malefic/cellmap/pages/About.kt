@@ -1,4 +1,4 @@
-package xyz.malefic.staticsite.pages
+package xyz.malefic.cellmap.pages
 
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.foundation.layout.Box

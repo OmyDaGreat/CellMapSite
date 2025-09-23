@@ -1,4 +1,4 @@
-package xyz.malefic.staticsite.models
+package xyz.malefic.cellmap.models
 
 data class CellOrganelle(
     val id: String,
@@ -44,7 +44,7 @@ object CellOrganelleData {
             ),
             CellOrganelle(
                 id = "mitochondria",
-                name = "Mitochondria",
+                name = "The Mighty Mitochondria",
                 description =
                     "Welcome to the Mighty Mitochondria, the cell's favorite power plant! This bean shaped home may look simple on the outside, but on the inside, it is a non-stop energy factory!\n" +
                         "\n" +
