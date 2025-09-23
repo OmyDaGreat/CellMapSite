@@ -277,9 +277,9 @@ fun HomePage() {
                                             property("object-fit", "cover")
                                             property("object-position", "center")
                                         }
-                                    }
+                                    },
                                 )
-                                
+
                                 // Tooltip on selection
                                 if (isSelected) {
                                     Div(
