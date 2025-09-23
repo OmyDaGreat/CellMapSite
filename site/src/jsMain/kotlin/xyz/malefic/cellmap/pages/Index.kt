@@ -57,6 +57,7 @@ import org.jetbrains.compose.web.css.width
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.H1
 import org.jetbrains.compose.web.dom.H2
+import org.jetbrains.compose.web.dom.Img
 import org.jetbrains.compose.web.dom.P
 import org.jetbrains.compose.web.dom.Text
 import xyz.malefic.cellmap.models.CellOrganelleData
@@ -254,17 +255,31 @@ fun HomePage() {
                                     top(organelle.mapPosition.y.percent)
                                     width(organelle.size.width.px)
                                     height(organelle.size.height.px)
-                                    borderRadius(50.percent)
-                                    backgroundColor(Color(organelle.color))
                                     cursor("pointer")
                                     if (isSelected) {
                                         border(3.px, LineStyle.Solid, Color("#FFD700"))
                                     } else {
                                         border(2.px, LineStyle.Solid, Colors.White)
                                     }
+                                    borderRadius(8.px)
+                                    property("overflow", "hidden")
                                 }
                             },
                             content = {
+                                // Image for the organelle
+                                Img(
+                                    src = organelle.imageUrl,
+                                    alt = organelle.name,
+                                    attrs = {
+                                        style {
+                                            width(100.percent)
+                                            height(100.percent)
+                                            property("object-fit", "cover")
+                                            property("object-position", "center")
+                                        }
+                                    }
+                                )
+                                
                                 // Tooltip on selection
                                 if (isSelected) {
                                     Div(

@@ -37,7 +37,7 @@ object CellOrganelleData {
                         "\n" +
                         "Coming fully furnished with all the materials you need for innovation, choose the nucleus if you’re an inspired creative who wants to make an impact!",
                 function = "Controls cell activities and contains DNA",
-                imageUrl = "/images/nucleus.jpg",
+                imageUrl = "https://via.placeholder.com/150x150/8B4513/FFFFFF?text=Nucleus",
                 mapPosition = Position(50.0, 35.0),
                 size = Size(15.0, 15.0),
                 color = "#8B4513",
@@ -57,7 +57,7 @@ object CellOrganelleData {
                         "\n" +
                         "Perfect For: Anyone who needs energy to live, work, and play!",
                 function = "Produces energy (ATP) for the cell",
-                imageUrl = "/images/mitochondria.jpg",
+                imageUrl = "https://via.placeholder.com/120x80/FF6B6B/FFFFFF?text=Mitochondria",
                 mapPosition = Position(25.0, 60.0),
                 size = Size(12.0, 8.0),
                 color = "#FF6B6B",
@@ -86,7 +86,7 @@ object CellOrganelleData {
                         "Perfect for: \n" +
                         "Anyone who loves sunny days and snacks!\n",
                 function = "Photosynthesis and energy production",
-                imageUrl = "/images/chloroplast.jpg",
+                imageUrl = "https://via.placeholder.com/100x100/32CD32/FFFFFF?text=Chloroplast",
                 mapPosition = Position(80.0, 80.0),
                 size = Size(10.0, 10.0),
                 color = "#32CD32",
@@ -101,7 +101,7 @@ object CellOrganelleData {
                         "\n" +
                         "Whatever option you decide, know we have millions of ribosome apartments available for your selection!",
                 function = "Protein synthesis",
-                imageUrl = "/images/ribosome.jpg",
+                imageUrl = "https://via.placeholder.com/60x60/4ECDC4/FFFFFF?text=Ribosome",
                 mapPosition = Position(70.0, 45.0),
                 size = Size(6.0, 6.0),
                 color = "#4ECDC4",
@@ -114,7 +114,7 @@ object CellOrganelleData {
                         "\n" +
                         "This property comes in two parts (a double deal!). First, the rough ER. It has a stylish look through the decorative ribosomes that are attached to it. These allow for the compartmentalization of protein synthesis—mRNA that exits the nucleus is translated by ribosomes. Next, the smooth ER. While it has a more simplistic look with no ribosomes, it synthesizes lipids like phospholipids, cholesterol, and steroids. This includes fats used for insulation, meaning this home comes with its own heating! Also, the smooth ER has enzymes that detoxify the cell. Who wouldn’t want a self-cleaning house?",
                 function = "Protein and lipid synthesis, transport",
-                imageUrl = "/images/er.jpg",
+                imageUrl = "https://via.placeholder.com/200x100/45B7D1/FFFFFF?text=ER",
                 mapPosition = Position(60.0, 25.0),
                 size = Size(20.0, 10.0),
                 color = "#45B7D1",
@@ -131,7 +131,7 @@ object CellOrganelleData {
                         "\n" +
                         "Cisternae Court is situated in a wonderful community of couriers, whom you can socialize daily at the estate’s trans face as they pick up materials to send out into the cytosol.",
                 function = "Modifies and packages proteins",
-                imageUrl = "/images/golgi.jpg",
+                imageUrl = "https://via.placeholder.com/100x120/96CEB4/FFFFFF?text=Golgi",
                 mapPosition = Position(75.0, 70.0),
                 size = Size(10.0, 12.0),
                 color = "#96CEB4",
@@ -149,7 +149,7 @@ object CellOrganelleData {
                         "We’ve also got a state-of-the-art security system in toxic compounds and enzymes that help deter herbivores and pathogens. \n" +
                         "The interior comes fully furnished with gorgeous anthocyanin pigments, adding bright and fun colors to your living space!",
                 function = "Storage, waste disposal, growth",
-                imageUrl = "/images/central_vacuole.jpg",
+                imageUrl = "https://via.placeholder.com/180x180/FFB6B9/FFFFFF?text=Vacuole",
                 mapPosition = Position(40.0, 75.0),
                 size = Size(18.0, 18.0),
                 color = "#FFB6B9",
@@ -164,7 +164,7 @@ object CellOrganelleData {
                         "\n" +
                         "You’ll find that the mosaic model construction is to die for; it isn’t just stunning, it’s crucial to the stability of the plasma membrane. Weak hydrophobic interactions allow the membrane to move and shift, maintaining fluid and structural integrity at different temperatures. This location is embellished by membrane carbohydrates—integral and flashy markers for the cell.",
                 function = "Regulates entry and exit of substances",
-                imageUrl = "/images/plasma_membrane.jpg",
+                imageUrl = "https://via.placeholder.com/300x50/F7D794/FFFFFF?text=Membrane",
                 mapPosition = Position(10.0, 10.0),
                 size = Size(30.0, 5.0),
                 color = "#F7D794",
