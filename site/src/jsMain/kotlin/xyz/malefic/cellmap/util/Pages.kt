@@ -6,4 +6,5 @@ enum class Pages(
 ) {
     INDEX("Cell Explorer", "/"),
     ABOUT("About", "/about"),
+    ORGANELLE_DETAIL("Organelle Detail", "/organelle"),
 }
