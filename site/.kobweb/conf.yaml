@@ -1,5 +1,5 @@
 site:
-  basePath: "CellMapSite"
+  basePath: ""
   title: "Cell Map Brokerage"
 
 server:
