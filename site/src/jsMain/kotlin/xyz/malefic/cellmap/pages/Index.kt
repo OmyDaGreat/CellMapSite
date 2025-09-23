@@ -92,134 +92,134 @@ fun HomePage() {
                             height(100.percent)
                             overflow("auto")
                         }
-                    }
+                    },
                 ) {
                     Column {
-                    H1(
-                        attrs = {
-                            style {
-                                fontSize(28.px)
-                                color(Color("#2C3E50"))
-                                marginBottom(8.px)
-                            }
-                        },
-                    ) {
-                        Text("Cell Organelles")
-                    }
-
-                    P(
-                        attrs = {
-                            style {
-                                fontSize(16.px)
-                                color(Color("#7F8C8D"))
-                                marginBottom(24.px)
-                            }
-                        },
-                    ) {
-                        Text("Explore the fascinating structures within a eukaryotic cell")
-                    }
-
-                    // Organelle cards
-                    CellOrganelleData.organelles.forEach { organelle ->
-                        val isSelected = selectedOrganelleId == organelle.id
-                        Div(
+                        H1(
                             attrs = {
-                                onClick { 
-                                    selectedOrganelleId = organelle.id
-                                    pageContext.router.navigateTo("/organelle/${organelle.id}")
-                                }
                                 style {
-                                    width(100.percent)
-                                    backgroundColor(if (isSelected) Color("#F8F9FA") else Colors.White)
-                                    borderRadius(12.px)
-                                    padding(20.px)
-                                    marginBottom(16.px)
-                                    border(
-                                        1.px,
-                                        LineStyle.Solid,
-                                        if (isSelected) Color("#007BFF") else Color("#E8E8E8"),
-                                    )
-                                    cursor("pointer")
+                                    fontSize(28.px)
+                                    color(Color("#2C3E50"))
+                                    marginBottom(8.px)
                                 }
                             },
                         ) {
-                            Row(
-                                verticalAlignment = Alignment.CenterVertically,
+                            Text("Cell Organelles")
+                        }
+
+                        P(
+                            attrs = {
+                                style {
+                                    fontSize(16.px)
+                                    color(Color("#7F8C8D"))
+                                    marginBottom(24.px)
+                                }
+                            },
+                        ) {
+                            Text("Explore the fascinating structures within a eukaryotic plant cell!")
+                        }
+
+                        // Organelle cards
+                        CellOrganelleData.organelles.forEach { organelle ->
+                            val isSelected = selectedOrganelleId == organelle.id
+                            Div(
+                                attrs = {
+                                    onClick {
+                                        selectedOrganelleId = organelle.id
+                                        pageContext.router.navigateTo("/organelle/${organelle.id}")
+                                    }
+                                    style {
+                                        width(100.percent)
+                                        backgroundColor(if (isSelected) Color("#F8F9FA") else Colors.White)
+                                        borderRadius(12.px)
+                                        padding(20.px)
+                                        marginBottom(16.px)
+                                        border(
+                                            1.px,
+                                            LineStyle.Solid,
+                                            if (isSelected) Color("#007BFF") else Color("#E8E8E8"),
+                                        )
+                                        cursor("pointer")
+                                    }
+                                },
                             ) {
-                                Div(
+                                Row(
+                                    verticalAlignment = Alignment.CenterVertically,
+                                ) {
+                                    Div(
+                                        attrs = {
+                                            style {
+                                                width(12.px)
+                                                height(12.px)
+                                                borderRadius(50.percent)
+                                                backgroundColor(Color(organelle.color))
+                                                marginRight(8.px)
+                                            }
+                                        },
+                                    )
+                                    H2(
+                                        attrs = {
+                                            style {
+                                                fontSize(18.px)
+                                                color(Color("#2C3E50"))
+                                                margin(0.px)
+                                            }
+                                        },
+                                    ) {
+                                        Text(organelle.name)
+                                    }
+                                }
+
+                                P(
                                     attrs = {
                                         style {
-                                            width(12.px)
-                                            height(12.px)
-                                            borderRadius(50.percent)
-                                            backgroundColor(Color(organelle.color))
-                                            marginRight(8.px)
-                                        }
-                                    },
-                                )
-                                H2(
-                                    attrs = {
-                                        style {
-                                            fontSize(18.px)
-                                            color(Color("#2C3E50"))
-                                            margin(0.px)
+                                            fontSize(14.px)
+                                            color(Color("#7F8C8D"))
+                                            fontStyle("italic")
+                                            marginBottom(12.px)
+                                            marginTop(8.px)
                                         }
                                     },
                                 ) {
-                                    Text(organelle.name)
+                                    Text(organelle.function)
                                 }
-                            }
 
-                            P(
-                                attrs = {
-                                    style {
-                                        fontSize(14.px)
-                                        color(Color("#7F8C8D"))
-                                        fontStyle("italic")
-                                        marginBottom(12.px)
-                                        marginTop(8.px)
-                                    }
-                                },
-                            ) {
-                                Text(organelle.function)
-                            }
-
-                            P(
-                                attrs = {
-                                    style {
-                                        fontSize(14.px)
-                                        color(Color("#555555"))
-                                        marginBottom(12.px)
-                                    }
-                                },
-                            ) {
-                                Text(
-                                    if (organelle.description.length > 120) {
-                                        organelle.description.take(120) + "..."
-                                    } else {
-                                        organelle.description
+                                P(
+                                    attrs = {
+                                        style {
+                                            fontSize(14.px)
+                                            color(Color("#555555"))
+                                            marginBottom(12.px)
+                                        }
                                     },
-                                )
-                            }
+                                ) {
+                                    Text(
+                                        if (organelle.description.length > 120) {
+                                            organelle.description.take(120) + "..."
+                                        } else {
+                                            organelle.description
+                                        },
+                                    )
+                                }
 
-                            Div(
-                                attrs = {
-                                    style {
-                                        display(DisplayStyle.InlineBlock)
-                                        padding(4.px, 8.px)
-                                        borderRadius(12.px)
-                                        fontSize(12.px)
-                                        color(Colors.White)
-                                        backgroundColor(Color(organelle.color))
-                                    }
-                                },
-                            ) {
-                                Text("Essential Organelle")
+                                Div(
+                                    attrs = {
+                                        style {
+                                            display(DisplayStyle.InlineBlock)
+                                            padding(4.px, 8.px)
+                                            borderRadius(12.px)
+                                            fontSize(12.px)
+                                            color(Colors.White)
+                                            backgroundColor(Color(organelle.color))
+                                        }
+                                    },
+                                ) {
+                                    Text("Essential Organelle")
+                                }
                             }
                         }
                     }
                 }
-            }
             }
 
             // Right panel - Cell map
@@ -264,7 +264,7 @@ fun HomePage() {
                         val isSelected = selectedOrganelleId == organelle.id
                         Div(
                             attrs = {
-                                onClick { 
+                                onClick {
                                     selectedOrganelleId = organelle.id
                                     pageContext.router.navigateTo("/organelle/${organelle.id}")
                                 }
