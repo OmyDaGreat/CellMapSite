@@ -1,6 +1,6 @@
 [versions]
 jetbrains-compose = "1.9.0"
-kobweb = "0.23.3"
+kobweb = "0.24.0"
 kotlin = "2.2.20"
 
 [libraries]
